@@ -1,3 +1,7 @@
 @import "~materialize-css/dist/css/materialize.min.css";
+.parallax-container {
+  min-height: 380px;
+  height: 100%;
+}
 
 /*# sourceMappingURL=index.css.map */
