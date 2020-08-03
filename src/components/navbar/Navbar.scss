@@ -1,0 +1,21 @@
+.Navbar {
+
+  img {
+    height: 100%;
+    margin-left: 1rem;
+  }
+
+  li {
+    > a {
+      font-size: 1.2rem;
+    }
+
+    &:last-child {
+      margin-right: 1rem;
+    }
+  }
+}
+
+.sidenav-trigger {
+  color: black;
+}

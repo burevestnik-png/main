@@ -1,3 +1,16 @@
+.Navbar img {
+  height: 100%;
+  margin-left: 1rem;
+}
+.Navbar li > a {
+  font-size: 1.2rem;
+}
+.Navbar li:last-child {
+  margin-right: 1rem;
+}
 
+.sidenav-trigger {
+  color: black;
+}
 
 /*# sourceMappingURL=Navbar.css.map */

@@ -1390,6 +1390,21 @@
   dependencies:
     jest-diff "^24.3.0"
 
+"@types/jquery@*":
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.5.1.tgz#cebb057acf5071c40e439f30e840c57a30d406c3"
+  integrity sha512-Tyctjh56U7eX2b9udu3wG853ASYP0uagChJcQJXLUXEU6C/JiW5qt5dl8ao01VRj1i5pgXPAf8f1mq4+FDLRQg==
+  dependencies:
+    "@types/sizzle" "*"
+
+"@types/materialize-css@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@types/materialize-css/-/materialize-css-1.0.8.tgz#4dad6adf1a60d0a2f1c5bf1506e0ae01a16bed42"
+  integrity sha512-KEfzuNfftNWt4ULrwqu7YdRJLjk42LuKxeLJ8ek91w+L9rReIAAYAbpAghUwcfgMTdEN6ykJ718KAHapDZCndA==
+  dependencies:
+    "@types/jquery" "*"
+    cash-dom "*"
+
 "@types/node@^12.0.0":
   version "12.12.53"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.12.53.tgz#be0d375933c3d15ef2380dafb3b0350ea7021129"
@@ -1436,6 +1451,11 @@
   dependencies:
     "@types/prop-types" "*"
     csstype "^3.0.2"
+
+"@types/sizzle@*":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@types/sizzle/-/sizzle-2.3.2.tgz#a811b8c18e2babab7d542b3365887ae2e4d9de47"
+  integrity sha512-7EJYyKTL7tFR8+gDbB6Wwz/arpGa0Mywk1TJbNzKzHtzbwVmY4HR9WqS5VV7dsBUKQmPNr192jHr/VpBluj/hg==
 
 "@types/tapable@1.0.2":
   version "1.0.2"
@@ -2723,6 +2743,11 @@ caseless@~0.12.0:
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
   integrity sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw=
+
+cash-dom@*:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/cash-dom/-/cash-dom-8.0.0.tgz#2069238ba1fc2caa7ef4b9066343e020afab8e87"
+  integrity sha512-uUv7JX91CQeACoovHur8eGV8Z3rnd3jjvU1t2EQzW0kOd96VzOnjZCDjbC0FP3LgMpWLcweQjK2UZ1rQ6MbljA==
 
 chalk@2.4.2, chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.4.1, chalk@^2.4.2:
   version "2.4.2"
