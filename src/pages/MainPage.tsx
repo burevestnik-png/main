@@ -28,6 +28,8 @@ const MainPage: FunctionComponent = () => {
             <EntryParallax/>
             { initState.map(( project, index ) =>
                 <MainProject project={ project }
+                             projectId={ index }
+                             isLast={ index === initState.length - 1 }
                              isFirst={ index === 0 }
                 />) }
         </>

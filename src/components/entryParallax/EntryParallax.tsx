@@ -1,5 +1,6 @@
 import M from "materialize-css";
 import React, { FC, useEffect } from 'react';
+import { Link } from "react-scroll";
 import codeJpeg from "../../resources/background3.jpg";
 import './EntryParallax.css';
 
@@ -14,9 +15,9 @@ const EntryParallax: FC = () => {
             <div className="section no-pad-bot">
                 <div className="container">
                     <br/>
-                    <Header />
-                    <Description />
-                    <ContentLink />
+                    <Header/>
+                    <Description/>
+                    <ContentLink/>
                     <br/>
                 </div>
             </div>
@@ -44,10 +45,14 @@ const Description = () =>
 
 const ContentLink = () =>
     <div className="row center">
-        <a href="http://materializecss.com/getting-started.html"
-           id="download-button"
-           className="btn-large waves-effect waves-light teal lighten-1"
+        <Link to="project-0"
+              spy={ true }
+              smooth={ true }
+              duration={ 1000 }
+              delay={ 250 }
         >
-            Let's start
-        </a>
+            <a className="btn-large waves-effect waves-light teal lighten-1">
+                Let's start
+            </a>
+        </Link>
     </div>
