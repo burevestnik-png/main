@@ -1,6 +1,6 @@
 import M from "materialize-css";
 import React, { FC, useEffect } from 'react';
-import codeJpeg from "../../resources/code.jpg";
+import codeJpeg from "../../resources/background3.jpg";
 import './EntryParallax.css';
 
 const EntryParallax: FC = () => {
@@ -33,12 +33,12 @@ const EntryParallax: FC = () => {
 export default EntryParallax;
 
 const Header = () =>
-    <h1 className="header center white-text">Project List</h1>
+    <h1 className="header center">Project List</h1>
 
 const Description = () =>
     <div className="row center">
-        <h5 className="header col s12 white-text">
-            Here you can see all mine projects: from easiest to hardest
+        <h5 className="header col s12">
+            Here you can see all mine projects: from easiest (in archive) to hardest
         </h5>
     </div>
 
