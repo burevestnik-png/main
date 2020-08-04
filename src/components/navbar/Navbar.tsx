@@ -61,8 +61,17 @@ const LinksWrapper: FC<LinksWrapperType> = ( { isMobile } ) => {
                          className={ isMobile ? linkClasses.join(" ") : linkClasses[0] }
                 >List of projects</NavLink>
             </li>
+
             <li className={ indexOfActiveLink === 1 ? "active" : "" }
                 onClick={ () => setIndexOfActiveLink(1) }
+            >
+                <NavLink to="/archive"
+                         className={ isMobile ? linkClasses.join(" ") : linkClasses[0] }
+                >Archive</NavLink>
+            </li>
+
+            <li className={ indexOfActiveLink === 2 ? "active" : "" }
+                onClick={ () => setIndexOfActiveLink(2) }
             >
                 <NavLink to="/about"
                          className={ isMobile ? linkClasses.join(" ") : linkClasses[0] }

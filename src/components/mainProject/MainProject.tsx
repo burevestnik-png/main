@@ -66,6 +66,7 @@ const MainProject: FC<MainProjectType> = ( { project, projectId, isLast, isFirst
                         <a className="waves-effect waves-light btn-small"
                            href={ project.readyProjectLink }
                            style={ { marginRight: '30px' } }
+                           target="_blank"
                         >
                             <i className="material-icons right">trending_up</i>
                             Project link
@@ -74,6 +75,7 @@ const MainProject: FC<MainProjectType> = ( { project, projectId, isLast, isFirst
                         <a className="waves-effect waves-light btn-small"
                            href={ project.sourceLink }
                            style={ { marginRight: '30px' } }
+                           target="_blank"
                         >
                             <i className="material-icons right">favorite_border</i>
                             GitHub

@@ -39,7 +39,7 @@ const Header = () =>
 const Description = () =>
     <div className="row center">
         <h5 className="header col s12">
-            Here you can see all mine projects: from easiest (in archive) to hardest
+            Here you can see all mine projects: from easiest (in archive) to hardest (here)
         </h5>
     </div>
 
