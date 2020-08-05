@@ -70,7 +70,7 @@ const LinksWrapper: FC<LinksWrapperType> = ( { isMobile } ) => {
             <li className={ indexOfActiveLink === 0 ? "active" : "" }
                 onClick={ () => setIndexOfActiveLink(0) }
             >
-                <NavLink to="/"
+                <NavLink to="/main"
                          className={ linkClasses.join(" ") }
                 >List of projects</NavLink>
             </li>
@@ -78,7 +78,7 @@ const LinksWrapper: FC<LinksWrapperType> = ( { isMobile } ) => {
             <li className={ indexOfActiveLink === 1 ? "active" : "" }
                 onClick={ () => setIndexOfActiveLink(1) }
             >
-                <NavLink to="/archive"
+                <NavLink to="/main/archive"
                          className={ linkClasses.join(" ") }
                 >Archive</NavLink>
             </li>
@@ -86,7 +86,7 @@ const LinksWrapper: FC<LinksWrapperType> = ( { isMobile } ) => {
             <li className={ indexOfActiveLink === 2 ? "active" : "" }
                 onClick={ () => setIndexOfActiveLink(2) }
             >
-                <NavLink to="/about"
+                <NavLink to="/main/about"
                          className={ linkClasses.join(" ") }
                 >About me</NavLink>
             </li>

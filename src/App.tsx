@@ -10,14 +10,14 @@ function App() {
         <BrowserRouter>
             <Navbar/>
             <Route component={ MainPage }
-                   path="/"
+                   path="/main"
                    exact
             />
             <Route component={ ArchivePage }
-                   path="/archive"
+                   path="/main/archive"
             />
             <Route component={ AboutPage }
-                   path="/about"
+                   path="/main/about"
             />
         </BrowserRouter>
     );
