@@ -5,7 +5,9 @@ const entryParState = {
     header: "Archive",
     description: "Here you can see all mine projects: from easiest to hardest",
     btnName: "Check",
-    image: "secondTab"
+    image: "secondTab",
+    textColor: "white",
+    scrollTarget: ""
 }
 
 const ArchivePage: FC = () => {
@@ -15,6 +17,8 @@ const ArchivePage: FC = () => {
                            description={ entryParState.description }
                            btnName={ entryParState.btnName }
                            image={ entryParState.image }
+                           textColor={ entryParState.textColor }
+                           scrollTarget={ entryParState.scrollTarget }
             />
         </>
     );

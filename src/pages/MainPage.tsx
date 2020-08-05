@@ -26,7 +26,9 @@ const entryParState = {
     header: "Project List",
     description: "Here you can see my hardest projects",
     btnName: "Let's start",
-    image: "firstTab"
+    image: "firstTab",
+    textColor: "black",
+    scrollTarget: "project-0"
 }
 
 const MainPage: FunctionComponent = () => {
@@ -36,6 +38,8 @@ const MainPage: FunctionComponent = () => {
                            description={ entryParState.description }
                            header={ entryParState.header }
                            image={ entryParState.image }
+                           textColor={ entryParState.textColor }
+                           scrollTarget={ entryParState.scrollTarget }
             />
             { initState.map(( project, index ) =>
                 <MainProject project={ project }

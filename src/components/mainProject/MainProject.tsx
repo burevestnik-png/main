@@ -13,14 +13,14 @@ const images: ImageWrapper[] = [
     { image: webLab1, name: "web-lab1-project" }
 ]
 
-type MainProjectType = {
+type MainProjectProps = {
     project: Project,
     projectId: number,
     isLast: boolean,
     isFirst: boolean
 }
 
-const MainProject: FC<MainProjectType> = ( { project, projectId, isLast, isFirst } ) => {
+const MainProject: FC<MainProjectProps> = ( { project, projectId, isLast, isFirst } ) => {
     useEffect(() => {
         const parallax = document.querySelectorAll('.parallax');
         M.Parallax.init(parallax, {});

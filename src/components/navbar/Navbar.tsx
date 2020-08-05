@@ -49,8 +49,21 @@ type LinksWrapperType = {
 }
 
 const LinksWrapper: FC<LinksWrapperType> = ( { isMobile } ) => {
-    const linkClasses = [ 'black-text', 'sidenav-close' ]
-    const [ indexOfActiveLink, setIndexOfActiveLink ] = useState(0);
+    const linkClasses = [ 'black-text' ]
+    if (isMobile) {
+        linkClasses.push('sidenav-close')
+    }
+    //todo -1 to fix visual bug
+    const [ indexOfActiveLink, setIndexOfActiveLink ] = useState(-1);
+
+    useEffect(() => {
+        const savedIndex = JSON.parse(localStorage.getItem('current-nav-index') || '0') as number;
+        setIndexOfActiveLink(savedIndex);
+    }, [])
+
+    useEffect(() => {
+        localStorage.setItem('current-nav-index', JSON.stringify(indexOfActiveLink));
+    }, [ indexOfActiveLink ])
 
     return (
         <>
@@ -58,7 +71,7 @@ const LinksWrapper: FC<LinksWrapperType> = ( { isMobile } ) => {
                 onClick={ () => setIndexOfActiveLink(0) }
             >
                 <NavLink to="/"
-                         className={ isMobile ? linkClasses.join(" ") : linkClasses[0] }
+                         className={ linkClasses.join(" ") }
                 >List of projects</NavLink>
             </li>
 
@@ -66,7 +79,7 @@ const LinksWrapper: FC<LinksWrapperType> = ( { isMobile } ) => {
                 onClick={ () => setIndexOfActiveLink(1) }
             >
                 <NavLink to="/archive"
-                         className={ isMobile ? linkClasses.join(" ") : linkClasses[0] }
+                         className={ linkClasses.join(" ") }
                 >Archive</NavLink>
             </li>
 
@@ -74,7 +87,7 @@ const LinksWrapper: FC<LinksWrapperType> = ( { isMobile } ) => {
                 onClick={ () => setIndexOfActiveLink(2) }
             >
                 <NavLink to="/about"
-                         className={ isMobile ? linkClasses.join(" ") : linkClasses[0] }
+                         className={ linkClasses.join(" ") }
                 >About me</NavLink>
             </li>
         </>

@@ -6,11 +6,13 @@ import secondTab from "../../resources/background2.jpg";
 import firstTab from "../../resources/background3.jpg";
 import './EntryParallax.css';
 
-type EntryParallaxType = {
+type EntryParallaxProps = {
     header: string,
     description: string,
     btnName: string,
-    image: string
+    image: string,
+    textColor: string,
+    scrollTarget: string
 }
 
 const images: ImageWrapper[] = [
@@ -18,7 +20,14 @@ const images: ImageWrapper[] = [
     { name: "secondTab", image: secondTab }
 ]
 
-const EntryParallax: FC<EntryParallaxType> = ( { header, description, btnName, image } ) => {
+const EntryParallax: FC<EntryParallaxProps> = ( {
+                                                   header,
+                                                   description,
+                                                   btnName,
+                                                   image,
+                                                   textColor,
+                                                   scrollTarget
+                                               } ) => {
     useEffect(() => {
         const parallax = document.querySelectorAll('.parallax');
         M.Parallax.init(parallax, {});
@@ -27,11 +36,11 @@ const EntryParallax: FC<EntryParallaxType> = ( { header, description, btnName, i
     return (
         <div className="parallax-container entry-par-container">
             <div className="section no-pad-bot">
-                <div className="container">
+                <div className={ `container ${ textColor === "white" ? "white-text" : "" }` }>
                     <br/>
                     <Header content={ header }/>
                     <Description content={ description }/>
-                    <ContentLink content={ btnName }/>
+                    <ContentLink content={ btnName } scrollTarget={scrollTarget}/>
                     <br/>
                 </div>
             </div>
@@ -57,9 +66,9 @@ const Description: FC<{ content: string }> = ( { content } ) =>
         </h5>
     </div>
 
-const ContentLink: FC<{ content: string }> = ( { content } ) =>
+const ContentLink: FC<{ content: string , scrollTarget: string}> = ( { content, scrollTarget } ) =>
     <div className="row center">
-        <Link to="project-0"
+        <Link to={scrollTarget}
               spy={ true }
               smooth={ true }
               duration={ 1000 }
