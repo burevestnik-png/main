@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Redirect, Route } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import AboutPage from "./pages/AboutPage";
 import ArchivePage from "./pages/ArchivePage";
@@ -15,10 +15,13 @@ function App() {
             />
             <Route component={ ArchivePage }
                    path="/main/archive"
+                   exact
             />
             <Route component={ AboutPage }
                    path="/main/about"
+                   exact
             />
+            <Redirect to="/main"/>
         </BrowserRouter>
     );
 }
