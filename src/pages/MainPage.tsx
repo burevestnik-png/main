@@ -22,10 +22,21 @@ const initState: Project[] = [
     }
 ]
 
+const entryParState = {
+    header: "Project List",
+    description: "Here you can see my hardest projects",
+    btnName: "Let's start",
+    image: "firstTab"
+}
+
 const MainPage: FunctionComponent = () => {
     return (
         <>
-            <EntryParallax/>
+            <EntryParallax btnName={ entryParState.btnName }
+                           description={ entryParState.description }
+                           header={ entryParState.header }
+                           image={ entryParState.image }
+            />
             { initState.map(( project, index ) =>
                 <MainProject project={ project }
                              projectId={ index }

@@ -1,10 +1,24 @@
 import M from "materialize-css";
 import React, { FC, useEffect } from 'react';
 import { Link } from "react-scroll";
-import codeJpeg from "../../resources/background3.jpg";
+import { ImageWrapper } from "../../interfaces/interfaces";
+import secondTab from "../../resources/background2.jpg";
+import firstTab from "../../resources/background3.jpg";
 import './EntryParallax.css';
 
-const EntryParallax: FC = () => {
+type EntryParallaxType = {
+    header: string,
+    description: string,
+    btnName: string,
+    image: string
+}
+
+const images: ImageWrapper[] = [
+    { name: "firstTab", image: firstTab },
+    { name: "secondTab", image: secondTab }
+]
+
+const EntryParallax: FC<EntryParallaxType> = ( { header, description, btnName, image } ) => {
     useEffect(() => {
         const parallax = document.querySelectorAll('.parallax');
         M.Parallax.init(parallax, {});
@@ -15,15 +29,15 @@ const EntryParallax: FC = () => {
             <div className="section no-pad-bot">
                 <div className="container">
                     <br/>
-                    <Header/>
-                    <Description/>
-                    <ContentLink/>
+                    <Header content={ header }/>
+                    <Description content={ description }/>
+                    <ContentLink content={ btnName }/>
                     <br/>
                 </div>
             </div>
 
             <div className="parallax entry-parallax">
-                <img src={ codeJpeg }
+                <img src={ images.filter(value => value.name === image)[0].image }
                      alt=""
                 />
             </div>
@@ -33,17 +47,17 @@ const EntryParallax: FC = () => {
 
 export default EntryParallax;
 
-const Header = () =>
-    <h1 className="header center">Project List</h1>
+const Header: FC<{ content: string }> = ( { content } ) =>
+    <h1 className="header center">{ content }</h1>
 
-const Description = () =>
+const Description: FC<{ content: string }> = ( { content } ) =>
     <div className="row center">
         <h5 className="header col s12">
-            Here you can see all mine projects: from easiest (in archive) to hardest (here)
+            { content }
         </h5>
     </div>
 
-const ContentLink = () =>
+const ContentLink: FC<{ content: string }> = ( { content } ) =>
     <div className="row center">
         <Link to="project-0"
               spy={ true }
@@ -52,7 +66,7 @@ const ContentLink = () =>
               delay={ 250 }
         >
             <a className="btn-large waves-effect waves-light teal lighten-1">
-                Let's start
+                { content }
             </a>
         </Link>
     </div>
