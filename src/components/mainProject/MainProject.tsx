@@ -1,9 +1,9 @@
 import M from "materialize-css";
 import React, { FC, useEffect } from 'react';
-import { Link } from "react-scroll";
-import { ImageWrapper, Project } from "../../interfaces/interfaces";
+import { ButtonSize, ImageWrapper, Project } from "../../interfaces/interfaces";
 import myAwesColProject from "../../resources/my-awes-col-project.png";
 import webLab1 from "../../resources/web-lab-1.png";
+import ContentLink from "../contentLink/ContentLink";
 
 import './MainProject.css';
 
@@ -43,24 +43,20 @@ const MainProject: FC<MainProjectProps> = ( { project, projectId, isLast, isFirs
                     <p className="light">
                         { project.description }
                     </p>
-                    <div className="center-align">
+                    <div style={ { display: "flex", justifyContent: "center" } }>
                         {
                             isFirst ?
                                 <div/>
                                 :
-                                <Link to={ `project-${ projectId - 1 }` }
-                                      spy={ true }
-                                      smooth={ true }
-                                      duration={ 1000 }
-                                      delay={ 250 }
-                                >
-                                    <a className="waves-effect waves-light btn-small"
-                                       style={ { marginRight: '30px' } }
-                                    >
-                                        <i className="material-icons left">arrow_back_ios</i>
-                                        Go back
-                                    </a>
-                                </Link>
+                                <ContentLink content={ "Go back" }
+                                             scrollTarget={ `project-${ projectId - 1 }` }
+                                             btnSize={ ButtonSize.SMALL }
+                                             styles={ { marginRight: '30px' } }
+                                             icon={ {
+                                                 name: "arrow_back_ios",
+                                                 direction: "left"
+                                             } }
+                                />
                         }
 
                         <a className="waves-effect waves-light btn-small"
@@ -85,17 +81,14 @@ const MainProject: FC<MainProjectProps> = ( { project, projectId, isLast, isFirs
                             isLast ?
                                 <div/>
                                 :
-                                <Link to={ `project-${ projectId + 1 }` }
-                                      spy={ true }
-                                      smooth={ true }
-                                      duration={ 1000 }
-                                      delay={ 250 }
-                                >
-                                    <a className="waves-effect waves-light btn-small">
-                                        <i className="material-icons right">arrow_forward_ios</i>
-                                        Go forward
-                                    </a>
-                                </Link>
+                                <ContentLink content={ "Go next" }
+                                             scrollTarget={ `project-${ projectId + 1 }` }
+                                             btnSize={ ButtonSize.SMALL }
+                                             icon={ {
+                                                 name: "arrow_forward_ios",
+                                                 direction: "right"
+                                             } }
+                                />
                         }
                     </div>
                 </div>

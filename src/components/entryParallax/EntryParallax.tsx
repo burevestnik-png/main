@@ -1,9 +1,9 @@
 import M from "materialize-css";
 import React, { FC, useEffect } from 'react';
-import { Link } from "react-scroll";
-import { ImageWrapper } from "../../interfaces/interfaces";
+import { ButtonSize, ImageWrapper } from "../../interfaces/interfaces";
 import secondTab from "../../resources/background2.jpg";
 import firstTab from "../../resources/background3.jpg";
+import ContentLink from "../contentLink/ContentLink";
 import './EntryParallax.css';
 
 type EntryParallaxProps = {
@@ -21,13 +21,13 @@ const images: ImageWrapper[] = [
 ]
 
 const EntryParallax: FC<EntryParallaxProps> = ( {
-                                                   header,
-                                                   description,
-                                                   btnName,
-                                                   image,
-                                                   textColor,
-                                                   scrollTarget
-                                               } ) => {
+                                                    header,
+                                                    description,
+                                                    btnName,
+                                                    image,
+                                                    textColor,
+                                                    scrollTarget
+                                                } ) => {
     useEffect(() => {
         const parallax = document.querySelectorAll('.parallax');
         M.Parallax.init(parallax, {});
@@ -40,7 +40,10 @@ const EntryParallax: FC<EntryParallaxProps> = ( {
                     <br/>
                     <Header content={ header }/>
                     <Description content={ description }/>
-                    <ContentLink content={ btnName } scrollTarget={scrollTarget}/>
+                    <ContentLink content={ btnName }
+                                 scrollTarget={ scrollTarget }
+                                 btnSize={ ButtonSize.LARGE }
+                    />
                     <br/>
                 </div>
             </div>
@@ -64,18 +67,4 @@ const Description: FC<{ content: string }> = ( { content } ) =>
         <h5 className="header col s12">
             { content }
         </h5>
-    </div>
-
-const ContentLink: FC<{ content: string , scrollTarget: string}> = ( { content, scrollTarget } ) =>
-    <div className="row center">
-        <Link to={scrollTarget}
-              spy={ true }
-              smooth={ true }
-              duration={ 1000 }
-              delay={ 250 }
-        >
-            <a className="btn-large waves-effect waves-light teal lighten-1">
-                { content }
-            </a>
-        </Link>
     </div>
