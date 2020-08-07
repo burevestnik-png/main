@@ -12,7 +12,7 @@
 ## About the project
 Stack of technologies:
 - ReactJs
-- npm & yarn
+- yarn
 - Typescript
 - Materialize.css
 
